@@ -61,6 +61,7 @@
 \renewcommand{\document}{
   \ori@document  % Begin document
   \printname % Print the name specified with \name
+  \begingroup
   \begin{minipage}[t]{0.35\textwidth}
     \href{mailto:\email}{\email}\\ % Print email with clickable link
     \phone % Print phone number
@@ -70,9 +71,10 @@
   \end{minipage}%
   \begin{minipage}[t]{0.35\textwidth}
     \href{https://www.\linkedin}{\faLinkedinSquare\,\linkedin}\\ % Print LinkedIn profile with clickable link
-    \href{https://www.\github}{\faGithub\,\github} % Print Github with clickable link
+    \href{https://www.\github}{\faGithub\,\github}\\ % Print Github with clickable link
   \end{minipage}
-  \vspace{-1.0em}
+  \endgroup
+  \vspace{-0.8em}
 }
 
 %----------------------------------------------------------------------------------------
@@ -98,22 +100,23 @@
 %----------------------------------------------------------------------------------------
 
 \newenvironment{rSchool}[5]{ % 5 input arguments - University, year(s) studied, discipline, GPA and awards
- {\bf #1} \hfill {#2}\\
- {#3} \hfill {#4}\\
- {#5}
+  {\bf #1} \hfill {#2}\\
+  {#3} \hfill {#4}\\
+  {#5}
 }
 
 \newenvironment{rWork}[3]{ % 3 input arguments - title, company's name and work duration
-{\begin{minipage}[t]{0.4\textwidth}
-\bf #1 % Print title
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\bf #2 % Print company's name
-\end{minipage}
-\hfill \bf #3 % Flush work duration to the right
-}
+  {
+  \begin{minipage}[t]{0.4\textwidth}
+    \bf #1 % Print title
+  \end{minipage}
+  \begin{minipage}[t]{0.3\textwidth}
+    \bf #2 % Print company's name
+  \end{minipage}
+  \hfill \bf #3 % Flush work duration to the right
+  }
   \begin{list}{\raisebox{.7\height}{\scalebox{.7}{$\bullet$}}}{\leftmargin=0em} % using small scaled \bullet for bullets, no indentation
-   \setlength{\itemsep}{-0.5em} \vspace{-0.5em}% Compress items in list together for aesthetics
+    \setlength{\itemsep}{-0.5em} \vspace{-0.5em}% Compress items in list together for aesthetics
   }{
   \end{list}
 }

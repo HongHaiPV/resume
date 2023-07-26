@@ -61,7 +61,7 @@
 \renewcommand{\document}{
   \ori@document  % Begin document
   \printname % Print the name specified with \name
-  \begingroup
+  {
   \begin{minipage}[t]{0.35\textwidth}
     \href{mailto:\email}{\email}\\ % Print email with clickable link
     \phone % Print phone number
@@ -71,9 +71,10 @@
   \end{minipage}%
   \begin{minipage}[t]{0.35\textwidth}
     \href{https://www.\linkedin}{\faLinkedinSquare\,\linkedin}\\ % Print LinkedIn profile with clickable link
-    \href{https://www.\github}{\faGithub\,\github}\\ % Print Github with clickable link
+    \href{https://www.\github}{\faGithub\,\github} % Print Github with clickable link
   \end{minipage}
-  \endgroup
+  } % End of the minipage, need a break
+  
   \vspace{-0.8em}
 }
 

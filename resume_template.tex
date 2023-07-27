@@ -1,0 +1,65 @@
+\documentclass{resume} % Use the custom resume.cls style
+\usepackage[none]{hyphenat}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,      
+  urlcolor=blue,
+  pdftitle={YOUR NAME's Resume},
+  pdfpagemode=UseOutlines,
+  }
+
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+
+\name{Your name}
+\email{example@domain.com}
+\phone{(XXX)-XXX-XXXX}
+\address{City, Province}
+\linkedin{your linkedin}
+\github{your github}
+
+
+
+\begin{document}
+%%%
+%%%
+%%%
+\begin{rSection}{Work Experiences}
+  \begin{rWork}{Position}{Company, Location}{Start - End}
+    \item Responsibility 1.
+    \item Responsibility 2.
+    \item Responsibility 3.
+  \end{rWork}
+\end{rSection}
+%%%
+%%%
+%%%
+\begin{rSection}{Educations}
+\begin{rSchool}{University, City}
+  {\textbf{Start} - \textbf{End}}
+  {Major}
+  {GPA}
+  {Awards}
+\end{rSchool}
+\end{rSection}
+%%%
+%%%
+%%%
+\begin{rSection}{Projects}
+\textbf{Project1 - {Link}.} Descriptions.
+\end{rSection}
+%%%
+%%%
+%%%
+\begin{rSection}{SkillS}
+\textbf{Group 1:} ABC
+\end{rSection}
+%%%
+%%%
+%%%
+\end{document}

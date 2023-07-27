@@ -45,11 +45,10 @@
 % \printname is used to print the name as a page header
 
 \def \printname {
-\begingroup
   \begin{center}
-    {\huge \name}
+    {\centering \huge \name}
   \end{center}
-\endgroup
+  \vspace{-\baselineskip}
 }
 
 
@@ -61,21 +60,25 @@
 \renewcommand{\document}{
   \ori@document  % Begin document
   \printname % Print the name specified with \name
-  {
-  \begin{minipage}[t]{0.35\textwidth}
+  \begin{center}
+  \begin{minipage}[t]{.35\textwidth}
     \href{mailto:\email}{\email}\\ % Print email with clickable link
     \phone % Print phone number
   \end{minipage}%
-  \begin{minipage}[t]{0.4\textwidth}
+  \begin{minipage}[t]{.3\textwidth}
+    \centering
     \address % Print address
   \end{minipage}%
-  \begin{minipage}[t]{0.35\textwidth}
-    \href{https://www.\linkedin}{\faLinkedinSquare\,\linkedin}\\ % Print LinkedIn profile with clickable link
-    \href{https://www.\github}{\faGithub\,\github} % Print Github with clickable link
-  \end{minipage}
-  } % End of the minipage, need a break
-  
-  \vspace{-0.8em}
+  \begin{minipage}[t]{.35\textwidth}
+    \begin{flushright} % Align the right most box by the longest line
+    \begin{tabular}[t]{l}
+      \href{https://www.\linkedin}{\faLinkedinSquare\,\linkedin}\\ % Print LinkedIn profile with clickable link
+      \href{https://www.\github}{\faGithub\,\github} % Print Github with clickable link
+    \end{tabular}
+    \end{flushright}
+  \end{minipage} % End of the minipage
+  \end{center}
+  % \vspace{-0.8em}
 }
 
 %----------------------------------------------------------------------------------------
